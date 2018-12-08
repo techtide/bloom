@@ -23,11 +23,10 @@ class PlayerScreenState extends State<PlayerScreen> {
     });
   }
 
-  Future pause() async {
-    await player.pause();
-    setState() {
-      playerState = PlayerState.paused;
-    }
+  Future<int> _pause() async {
+    final result = await player.pause();
+    if (result == 1) setState(() => playerState = PlayerState.paused);
+    return result;
   }
 
   @override
