@@ -4,9 +4,9 @@ class Track {
   String url;
   String title;
   String author;
-  int ageYear;
+  dynamic ageYear;
 
-  Track(String url, int ageYear, String title, String author) {
+  Track(String url, dynamic ageYear, String title, String author) {
     this.url = url;
     this.ageYear = ageYear;
     this.title = title;

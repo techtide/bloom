@@ -102,7 +102,7 @@ class PlayerScreenState extends State<PlayerScreen> {
                       icon: playerState ==  PlayerState.playing?new Icon(Icons.pause_circle_filled):new Icon(Icons.play_circle_filled),
                       disabledColor: Colors.white,
                       color: Colors.white,
-                      onPressed: () => play(),
+                      onPressed: () => playerState == PlayerState.playing ? play() : pause(),
                       iconSize: 80,
                     ),
                   ),

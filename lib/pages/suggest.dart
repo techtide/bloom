@@ -54,7 +54,7 @@ class SuggestScreenState extends State<SuggestScreen> {
                 title: new Text(tracks.getFilteredTracks(filter, controller.text)[index]["title"]),
                 leading: new Icon(Icons.playlist_add),
                 onTap: () {
-                  currentSelectedTrack = Track(tracks.getFilteredTracks(filter, controller.text)[index]["url"].toString(), int.parse(tracks.getTracks()[index]["ageYear"]), tracks.getTracks()[index]["title"].toString(), tracks.getTracks()[index]["author"].toString());
+                  currentSelectedTrack = Track(tracks.getFilteredTracks(filter, controller.text)[index]["url"].toString(), tracks.getTracks()[index]["ageYear"], tracks.getTracks()[index]["title"].toString(), tracks.getTracks()[index]["author"].toString());
                   print(currentSelectedTrack.title);
                 }
               );
