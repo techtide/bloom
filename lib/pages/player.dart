@@ -35,7 +35,12 @@ class PlayerScreenState extends State<PlayerScreen> {
       children: <Widget>[
         // Seek bar
         new Expanded(
-          child: new Container()
+          child: new Scaffold(
+            body: new Image.network(
+              currentSelectedTrack.imageURL,
+              fit: BoxFit.cover,
+            ),
+          )
         ),
         // Visualiser
         new Container(
