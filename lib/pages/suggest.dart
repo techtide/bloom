@@ -23,7 +23,7 @@ class SuggestScreenState extends State<SuggestScreen> {
                 title: new Text(tracks.getTracks()[index]["title"]),
                 leading: new Icon(Icons.playlist_add),
                 onTap: () {
-                currentSelectedTrack = Track(tracks.getTracks()[index]["url"].toString(), int.parse(tracks.getTracks()[index]["ageYear"]));
+                currentSelectedTrack = Track(tracks.getTracks()[index]["url"].toString(), int.parse(tracks.getTracks()[index]["ageYear"]), tracks.getTracks()[index]["title"].toString(), tracks.getTracks()[index]["author"].toString());
               },
             );
           }
