@@ -13,8 +13,8 @@ enum PlayerState { stopped, playing, paused }
 
 class PlayerScreenState extends State<PlayerScreen> {
   AudioPlayer player = new AudioPlayer();
-  PlayerState playerState;
-  
+  PlayerState playerState = PlayerState.stopped;
+
   Future play() async {
     await player.play(currentSelectedTrack.url);
     player.positionHandler = (pos) => print("${pos.inMilliseconds}");
@@ -23,7 +23,7 @@ class PlayerScreenState extends State<PlayerScreen> {
     });
   }
 
-  Future<int> _pause() async {
+  Future<int> pause() async {
     final result = await player.pause();
     if (result == 1) setState(() => playerState = PlayerState.paused);
     return result;
@@ -101,7 +101,7 @@ class PlayerScreenState extends State<PlayerScreen> {
                       icon: playerState ==  PlayerState.playing?new Icon(Icons.pause_circle_filled):new Icon(Icons.play_circle_filled),
                       disabledColor: Colors.white,
                       color: Colors.white,
-                      onPressed: () => playerState == PlayerState.playing ? play() : pause(),
+                      onPressed: () => playerState == PlayerState.stopped || playerState == PlayerState.paused ? play() : pause(),
                       iconSize: 80,
                     ),
                   ),
