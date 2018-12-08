@@ -1,12 +1,12 @@
-Track currentSelectedTrack = new Track(Tracks().getTracks()[0][ url ], int.parse(Tracks().getTracks()[0][ ageYear ]), Tracks().getTracks()[0][ title ], Tracks().getTracks()[0][ author ]);
+Track currentSelectedTrack = new Track("https://api.soundcloud.com/tracks/96188366/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", 10, "Ain't Misbehavin", "Fats Weller");
 
 class Track {
   String url;
   String title;
   String author;
-  int ageYear;
+  dynamic ageYear;
 
-  Track(String url, int ageYear, String title, String author) {
+  Track(String url, dynamic ageYear, String title, String author) {
     this.url = url;
     this.ageYear = ageYear;
     this.title = title;
@@ -42,11 +42,11 @@ class Tracks {
 
 
 // 1950
-    {"title": "That’s Amore ,  url :  https://api.soundcloud.com/tracks/12112157/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P",  "author": "Dean Martin" ,  "ageYear":  1950 },
-    {"title": "Come Fly With Me ,  url :  https://api.soundcloud.com/tracks/141257734/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author":  "Frank Sinatra", "ageYear":  1950 },
-    {"title": "Jailhouse Rock ,  url :  https://api.soundcloud.com/tracks/41575330/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author":  "Elvis Presley", "ageYear":  1950 },
-    {"title": "I Walk The Line ,  url :  https://api.soundcloud.com/tracks/68892719/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P",  "author":  "Johnny Cash", "ageYear":  1950 },
-    {"title": "I ve Got You Under My Skin ,  url :  https://api.soundcloud.com/tracks/111613252/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P",  "author":  "Frank Sinatra", "ageYear":  1950 },
+    {"title": "That’s Amore", "url": "https://api.soundcloud.com/tracks/12112157/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P",  "author": "Dean Martin" ,  "ageYear":  1950 },
+    {"title": "Come Fly With Me", "url": "https://api.soundcloud.com/tracks/141257734/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author":  "Frank Sinatra", "ageYear":  1950 },
+    {"title": "Jailhouse Rock", "url":  "https://api.soundcloud.com/tracks/41575330/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author":  "Elvis Presley", "ageYear":  1950 },
+    {"title": "I Walk The Line", "url": "https://api.soundcloud.com/tracks/68892719/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P",  "author":  "Johnny Cash", "ageYear":  1950 },
+    {"title": "I ve Got You Under My Skin", "url": "https://api.soundcloud.com/tracks/111613252/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P",  "author":  "Frank Sinatra", "ageYear":  1950 },
     
     // 1960
     {"title": "Sweet Caroline", "url":  "https://api.soundcloud.com/tracks/253089074/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Neil Diamond", "ageYear":  1960 },

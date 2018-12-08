@@ -51,6 +51,7 @@ class PlayerScreenState extends State<PlayerScreen> {
             child: Column(
             children: <Widget>[
               new RichText(
+                textAlign: TextAlign.center,
                 text: new TextSpan(
                   text: '',
                   children: [
@@ -65,7 +66,7 @@ class PlayerScreenState extends State<PlayerScreen> {
                       ),
                     ),
                     new TextSpan(
-                      text: '${"      " + currentSelectedTrack.author}',
+                      text: '${currentSelectedTrack.author}',
                       style: new TextStyle(
                         color: Colors.white,
                         fontSize: 18,

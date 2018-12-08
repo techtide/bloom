@@ -20,13 +20,14 @@ class SuggestScreenState extends State<SuggestScreen> {
     return new Column(
       children: <Widget>[
         new Padding(
-          padding: new EdgeInsets.only(top: 20.0),
+          padding: new EdgeInsets.only(top: 0.0),
         ),
         new TextField(
           decoration: new InputDecoration(
             labelText: "Patient's age",
             border: InputBorder.none,
           ),
+          keyboardType: TextInputType.number,
           controller: searchController,
         ),
         new Expanded(
