@@ -4,9 +4,9 @@ class Track {
   String url;
   String title;
   String author;
-  dynamic ageYear;
+  int ageYear;
 
-  Track(String url, dynamic ageYear, String title, String author) {
+  Track(String url, int ageYear, String title, String author) {
     this.url = url;
     this.ageYear = ageYear;
     this.title = title;
@@ -18,7 +18,7 @@ class Track {
 class Tracks {
   final List<Map<String, dynamic>> tracks = [
     // 1920
-    {"title": "Ain t Misbehavin",  "url":  "https://api.soundcloud.com/tracks/96188366/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author":  "Fats Weller",  "ageYear":  1920 },
+    {"title": "Ain't Misbehavin",  "url":  "https://api.soundcloud.com/tracks/96188366/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author":  "Fats Weller",  "ageYear":  1920 },
     {"title": "Dark was the night", "url":  "https://api.soundcloud.com/tracks/96188366/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author":  "Blind Willie Johnson", "ageYear":  1920 },
     {"title": "Down Hearted Blues", "url":  "https://api.soundcloud.com/tracks/135758251/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author":  "Bessie Smith", "ageYear":  1920 },
     {"title": "In the Jailhouse Now", "url":  "https://api.soundcloud.com/tracks/238012819/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author":  "Jimmie Rodgers",  "ageYear":  1920 },
@@ -65,5 +65,18 @@ class Tracks {
   
   List<Map<String, dynamic>> getTracks() {
     return tracks;
+  }
+
+  List<Map<String, dynamic>> getFilteredTracks(String filter, String textBox) {
+    List<Map<String, dynamic>>  _filtered = new List<Map<String, dynamic>>();
+    if(filter != null && filter != "" && textBox != "") {
+      for (var item in getTracks()) {
+        if(item["ageYear"] == int.parse(filter)) {
+          _filtered.add(item);
+        }
+      }
+      return _filtered;
+    }
+    return getTracks();
   }
 }
