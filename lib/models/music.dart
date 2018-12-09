@@ -12,6 +12,7 @@ class Track {
     this.ageYear = ageYear;
     this.title = title;
     this.author = author;
+    this.imageURL = imageURL;
   }
 }
 

@@ -14,7 +14,7 @@ enum PlayerState { stopped, playing, paused }
 class PlayerScreenState extends State<PlayerScreen> {
   AudioPlayer player = new AudioPlayer();
   PlayerState playerState = PlayerState.stopped;
-
+  
   Future play() async {
     await player.play(currentSelectedTrack.url);
     player.positionHandler = (pos) => print("${pos.inMilliseconds}");
@@ -33,14 +33,16 @@ class PlayerScreenState extends State<PlayerScreen> {
   Widget build(BuildContext context) {
     return new Column(
       children: <Widget>[
+        new Container(
+          width: double.infinity,
+          height: 40.0,
+        ),
         // Seek bar
         new Expanded(
-          child: new Scaffold(
-            body: new Image.network(
-              currentSelectedTrack.imageURL,
-              fit: BoxFit.cover,
-            ),
-          )
+          child: new Image.network(
+            currentSelectedTrack.imageURL,
+            fit: BoxFit.fill,
+          ),
         ),
         // Visualiser
         new Container(
