@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
         theme: new ThemeData(
           primaryColor: Colors.pink,
-          accentColor: Colors.pinkAccent
+          accentColor: Colors.pinkAccent,
         ),
         home: new BloomHome()
       );

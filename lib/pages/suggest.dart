@@ -43,7 +43,7 @@ class SuggestScreenState extends State<SuggestScreen> {
             labelText: "Patient's age",
             border: InputBorder.none,
           ),
-          keyboardType: TextInputType.number,
+          keyboardType: TextInputType.text,
           controller: controller,
         ),
         new Expanded(
