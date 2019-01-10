@@ -41,7 +41,7 @@ class PlayerScreenState extends State<PlayerScreen> {
         new Expanded(
           child: new Image.network(
             currentSelectedTrack.imageURL,
-            fit: BoxFit.fill,
+            fit: BoxFit.fitWidth,
           ),
         ),
         // Visualiser
@@ -112,7 +112,7 @@ class PlayerScreenState extends State<PlayerScreen> {
                       iconSize: 80,
                     ),
                   ),
-
+                // try deletes
                   new Expanded(
                     child: new Container(
                         
