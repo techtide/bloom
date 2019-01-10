@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bloom/pages/suggest.dart';
 import 'package:bloom/pages/player.dart';
+import 'package:bloom/pages/settings.dart';
 
 class BloomHome extends StatefulWidget {
   @override
@@ -28,6 +29,7 @@ class _BloomHomeState extends State<BloomHome> with SingleTickerProviderStateMix
           tabs: <Widget>[
             new Tab(text: "SUGGEST"),
             new Tab(text: "PLAYER"),
+            new Tab(text: "SETTINGS"),
           ],
         ),
       ),
@@ -36,8 +38,12 @@ class _BloomHomeState extends State<BloomHome> with SingleTickerProviderStateMix
         children: <Widget>[
           new SuggestScreen(),
           new PlayerScreen(),
+          new SettingScreen(),
         ],
       )
     );
   }
+}
+
+class SettingsScreen {
 }
