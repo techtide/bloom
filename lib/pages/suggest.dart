@@ -44,7 +44,7 @@ class SuggestScreenState extends State<SuggestScreen> {
         ),
         new TextField(
           decoration: new InputDecoration(
-            labelText: "Patient's age",
+            labelText: "Set age",
             border: InputBorder.none,
           ),
           keyboardType: TextInputType.text,
@@ -56,7 +56,15 @@ class SuggestScreenState extends State<SuggestScreen> {
             itemBuilder: (BuildContext c, int index) {
               return new ListTile(
                 title: new Text(tracks.getFilteredTracks(filter, controller.text)[index]["title"]),
-                leading: new Icon(Icons.playlist_add),
+                // leading: new Icon(Icons.playlist_add),
+                leading: new Container(
+                  width: 50,
+                  height: 50,
+                  child: new Image.network(
+                    tracks.getFilteredTracks(filter, controller.text)[index]["image"],
+                    fit: BoxFit.fill,
+                  ),
+                ),
                 
                 onTap: () {
                   if(config.playerState == config.PlayerState.playing) {
@@ -73,7 +81,7 @@ class SuggestScreenState extends State<SuggestScreen> {
             },
             padding: EdgeInsets.only(left: 10, right:10, top:10, bottom:10),
           ),
-        )
+        ),
       ]
     );
   }

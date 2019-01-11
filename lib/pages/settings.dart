@@ -10,6 +10,8 @@ class SettingScreen extends StatefulWidget {
 class SettingScreenState extends State<SettingScreen> {
   @override
   Widget build(BuildContext context) {
-    return new CountrySelector();
+    return new Scaffold(
+      body: CountrySelector(),
+    );
   }
 }
