@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:bloom/models/music.dart';
+import 'package:bloom/config.dart' as config;
 
 class PlayerScreen extends StatefulWidget {
   @override
@@ -9,23 +10,27 @@ class PlayerScreen extends StatefulWidget {
   }
 }
 
-enum PlayerState { stopped, playing, paused }
-
 class PlayerScreenState extends State<PlayerScreen> {
   AudioPlayer player = new AudioPlayer();
-  PlayerState playerState = PlayerState.stopped;
+  config.PlayerState playerState;
   
   Future play() async {
     await player.play(currentSelectedTrack.url);
     player.positionHandler = (pos) => print("${pos.inMilliseconds}");
     setState(() {
-      playerState = PlayerState.playing;
+      playerState = config.PlayerState.playing;
+      config.playerState = config.PlayerState.playing;
     });
   }
 
   Future<int> pause() async {
     final result = await player.pause();
-    if (result == 1) setState(() => playerState = PlayerState.paused);
+    if (result == 1) {
+      setState(() {
+        playerState = config.PlayerState.paused;
+        config.playerState = config.PlayerState.paused;
+      });
+    }
     return result;
   }
 
@@ -105,10 +110,10 @@ class PlayerScreenState extends State<PlayerScreen> {
 
                   new Container(
                     child: new IconButton(
-                      icon: playerState ==  PlayerState.playing?new Icon(Icons.pause_circle_filled):new Icon(Icons.play_circle_filled),
+                      icon: config.playerState ==  config.PlayerState.playing?new Icon(Icons.pause_circle_filled):new Icon(Icons.play_circle_filled),
                       disabledColor: Colors.white,
                       color: Colors.white,
-                      onPressed: () => playerState == PlayerState.stopped || playerState == PlayerState.paused ? play() : pause(),
+                      onPressed: () => config.playerState == config.PlayerState.stopped || playerState == config.PlayerState.paused ? play() : pause(),
                       iconSize: 80,
                     ),
                   ),
