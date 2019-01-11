@@ -18,7 +18,7 @@ class Track {
 
 // Need 5 tracks for 1920, 1930, 1940, 1950, 1960, 1970, 1980
 class Tracks {
-  final List<Map<String, dynamic>> tracks = [
+  final List<Map<String, dynamic>> tracks_US_UK = [
     // 1920
     {"title": "Ain't Misbehavin",  "url":  "https://api.soundcloud.com/tracks/96188366/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author":  "Fats Weller",  "ageYear":  1920, "image": "https://images-na.ssl-images-amazon.com/images/I/81wW2UTy7xL._SL1500_.jpg"},
     {"title": "Dark was the night", "url":  "https://api.soundcloud.com/tracks/96188366/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author":  "Blind Willie Johnson", "ageYear":  1920, "image": "http://nodepression.com/sites/default/files/styles/xlarge/public/images/main_image/ning_blog/BlindWillieJohnsonpic.jpg?itok=dQ1rXos1" },
@@ -64,9 +64,24 @@ class Tracks {
     {"title":  "Stayin’ Alive",  "url" :  "https://api.soundcloud.com/tracks/67283900/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P",  "author" :  "Bee Gees" , "ageYear":  1970, "image":"https://img.discogs.com/Yz23arsmSY0i6vqyF3w7KDd-8Vs=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-2385120-1280933141.jpeg.jpg" },
     {"title":  "Dancing Queen",  "url" :  "https://api.soundcloud.com/tracks/187768173/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P",  "author" :  "ABBA" ,  "ageYear":  1970, "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ef/ABBA_-_Dancing_Queen.png/220px-ABBA_-_Dancing_Queen.png"},
   ];
+
+  final List<Map<String, dynamic>> tracks_INDIA = [];
+
+  final List<Map<String, dynamic>> tracks_JAPAN = [];
+
+  final List<Map<String, dynamic>> tracks_CHINA = [];
   
-  List<Map<String, dynamic>> getTracks() {
-    return tracks;
+  List<Map<String, dynamic>> getTracks(String country) {
+    if (country == "United Kingdom" || country == "United States") {
+      return tracks_US_UK;
+    } else if (country == "India") {
+      return tracks_INDIA;
+    } else if (country == "Japan") {
+      return tracks_JAPAN;
+    } else if (country == "China") {
+      return tracks_CHINA;
+    }
+    return [tracks_US_UK, tracks_INDIA, tracks_JAPAN, tracks_CHINA].expand((x) => x).toList();
   }
 
   List<Map<String, dynamic>> getFilteredTracks(String filter, String textBox) {
