@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:bloom/config.dart' as config;
 
 class CountrySelector extends StatefulWidget {
   CountrySelector({Key key}) : super(key: key);
@@ -19,8 +19,7 @@ class CountrySelectorState extends State<CountrySelector> {
   @override
   void initState() {
     _dropDownMenuItems = getDropDownMenuItems();
-    _currentCity = _dropDownMenuItems[0].value;
-    super.initState();
+    _currentCity = config.country;
   }
 
   List<DropdownMenuItem<String>> getDropDownMenuItems() {
@@ -61,6 +60,7 @@ class CountrySelectorState extends State<CountrySelector> {
   void changedDropDownItem(String selectedCity) {
     setState(() {
       _currentCity = selectedCity;
+      config.country = selectedCity;
     });
   }
 

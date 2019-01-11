@@ -44,6 +44,3 @@ class _BloomHomeState extends State<BloomHome> with SingleTickerProviderStateMix
     );
   }
 }
-
-class SettingsScreen {
-}

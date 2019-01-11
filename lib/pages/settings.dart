@@ -10,12 +10,6 @@ class SettingScreen extends StatefulWidget {
 class SettingScreenState extends State<SettingScreen> {
   @override
   Widget build(BuildContext context) {
-    // return new Center(child: new Text("Settings"));
-    // return Column(
-    //   children: <Widget>[
-    //     new CountrySelector()
-    //   ],
-    // );
     return new CountrySelector();
   }
 }

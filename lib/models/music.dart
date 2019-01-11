@@ -1,3 +1,5 @@
+import 'package:bloom/config.dart' as config;
+
 Track currentSelectedTrack = new Track("https://api.soundcloud.com/tracks/96188366/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", 10, "Ain't Misbehavin", "Fats Weller", "https://images-na.ssl-images-amazon.com/images/I/81wW2UTy7xL._SL1500_.jpg");
 
 class Track {
@@ -87,13 +89,13 @@ class Tracks {
   List<Map<String, dynamic>> getFilteredTracks(String filter, String textBox) {
     List<Map<String, dynamic>>  _filtered = new List<Map<String, dynamic>>();
     if(filter != null && filter != "" && textBox != "") {
-      for (var item in getTracks()) {
+      for (var item in getTracks(config.country)) {
         if(item["ageYear"] == int.parse(filter)) {
           _filtered.add(item);
         }
       }
       return _filtered;
     }
-    return getTracks();
+    return getTracks(config.country);
   }
 }
