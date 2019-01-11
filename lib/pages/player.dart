@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bloom/models/music.dart';
 import 'package:bloom/config.dart' as config;
+import 'package:bloom/pages/playlist_module.dart';
 
 class PlayerScreen extends StatefulWidget {
   @override
@@ -44,6 +45,7 @@ class PlayerScreenState extends State<PlayerScreen> {
             currentSelectedTrack.imageURL,
             fit: BoxFit.fitWidth,
           ),
+          // child: new PlaylistModule(),
         ),
         // Visualiser
         new Container(

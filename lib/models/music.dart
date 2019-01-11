@@ -69,32 +69,50 @@ class Tracks {
 
   final List<Map<String, dynamic>> tracks_INDIA = [];
 
-  final List<Map<String, dynamic>> tracks_JAPAN = [];
+  final List<Map<String, dynamic>> tracks_JAPAN = [
+    {"title": "Haro no Umi", "url": "https://api.soundcloud.com/tracks/183757971/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Michio Miyagi", "ageYear":"1930", "image": "https://i1.sndcdn.com/artworks-000072116289-4u2fy1-t500x500.jpg"},
+
+    {"title": "Akatonbo", "url": "https://api.soundcloud.com/tracks/76594737/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Kosaku Yamada", "ageYear":"1930", "image": "https://media-cdn.tripadvisor.com/media/photo-s/0b/89/6f/70/akatonbo.jpg"},
+
+    {"title": "Chiran-Bushi", "url": "https://api.soundcloud.com/tracks/259843779/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Michio Mamiya", "ageYear":"1980", "image": "https://direct.rhapsody.com/imageserver/images/Alb.105510218/500x500.jpg"},
+
+    {"title": "Still Life in A", "url": "https://api.soundcloud.com/tracks/259129616/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Ryuichi Sakamoto", "ageYear":"1980", "image": "https://images.shazam.com/coverart/t90718797-b794100853_s400.jpg"},
+
+    {"title": "Birds in Warped Time II", "url": "https://api.soundcloud.com/tracks/13906123/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Somei Satoh", "ageYear":"2000", "image": "https://lastfm-img2.akamaized.net/i/u/300x300/fff8b35f26a2654c5bc607c780ec3d37.jpg"},
+
+    {"title": "Summer", "url": "https://api.soundcloud.com/tracks/15061960/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": " Joe Hisaishi", "ageYear":"2000", "image": "https://images-na.ssl-images-amazon.com/images/I/51t3q5RBT8L._SS500.jpg"},
+
+    {"title": "Dream of the Cherry Blossoms", "url": "https://api.soundcloud.com/tracks/148487777/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Keiko Abe", "ageYear":"1990", "image": "https://images-na.ssl-images-amazon.com/images/I/51C-C3ST33L._SY450_.jpg"},
+
+    {"title": "Night Bird", "url": "https://api.soundcloud.com/tracks/237278325/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Karen Tanaka", "ageYear":"2000", "image": "https://i.ebayimg.com/images/g/g2QAAOSwYlJW3Jk9/s-l300.jpg"},
+
+    {"title": "Hicari", "url": "https://api.soundcloud.com/tracks/122302534/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Akira Kosemura", "ageYear":"2000", "image": "https://e-cdns-images.dzcdn.net/images/cover/cc43cf9c9a968eb28fded5fea3a12a93/500x500.jpg"},
+
+    {"title": "Sukiaki", "url": "https://api.soundcloud.com/tracks/54224396/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Kyu Sakamoto", "ageYear":"1960", "image": "https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/SukiyakiCover.jpg/220px-SukiyakiCover.jpg"},
+
+    {"title": "Velvet Motel", "url": "https://api.soundcloud.com/tracks/214369141/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Eiichi Ohtaki", "ageYear":"1980", "image": "https://i1.sndcdn.com/artworks-000123004306-tmuf7o-t500x500.jpg"},
+
+    {"title": "Jikan Yo Tomare", "url": "https://api.soundcloud.com/tracks/147677566/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Eikichi Yazawa", "ageYear":"1980", "image": "http://images.45cat.com/eikichi-yazawa-jikan-yo-tomare-cbs-sony-s.jpg"},
+
+    {"title": "Mizuiro no Ame", "url": "https://api.soundcloud.com/tracks/444847959/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Junko Yagami", "ageYear":"1980", "image": "https://media.ntslive.co.uk/crop/770x770/d7deabf7-4e65-42e3-93bf-0faa026f98b6_1522022400.png"},
+  ];
 
   final List<Map<String, dynamic>> tracks_CHINA = [
     {"title": "The Moon Represents My Heart", "url": "https://api.soundcloud.com/tracks/146796808/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Teresa Teng", "ageYear":"1970", "image": "https://i1.sndcdn.com/artworks-000111252552-yxjb9s-t500x500.jpg"},
 
-
     {"title": "The Wandering Songstress", "url": "https://api.soundcloud.com/tracks/95032461/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Zhou Xuan", "ageYear":"1940", "image": "https://direct.rhapsody.com/imageserver/images/Alb.80832664/500x500.jpg"},
-
 
     {"title": "Shanghai Nights", "url": "https://api.soundcloud.com/tracks/547447575/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Wu Yingyin", "ageYear":"1960", "image": "https://lastfm-img2.akamaized.net/i/u/avatar300s/9f93fa7759dd47fd9ab3896eeee33196.jpg"},
 
-
     {"title": "Give Me a Kiss", "url": "https://api.soundcloud.com/tracks/22860672/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": " Zhang Lu", "ageYear":"1950", "image": "https://lastfm-img2.akamaized.net/i/u/avatar300s/f516c971ad6648d4a5b88506c6dbf5c5.jpg"},
-
 
     {"title": "Rose, Rose, I Love You", "url": "https://api.soundcloud.com/tracks/256559802/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Yao Li", "ageYear":"1940", "image": "https://lastfm-img2.akamaized.net/i/u/avatar300s/f516c971ad6648d4a5b88506c6dbf5c5.jpg"},
 
-
     {"title": "The Spring Breeze Kisses My Face", "url": "https://api.soundcloud.com/tracks/256559751/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Yao Li", "ageYear":"1960", "image": "https://images.shazam.com/coverart/t223469103-i1057615682_s400.jpg"},
-
 
     {"title": "I Want Your Love", "url": "https://api.soundcloud.com/tracks/289795498/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Ge Lan", "ageYear":"1950", "image": "https://images.shazam.com/coverart/t40655796-b730891116_s400.jpg"},
 
-
     {"title": "The Pretender", "url": "https://api.soundcloud.com/tracks/253354836/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Bai Guang", "ageYear":"1950", "image": "https://alchetron.com/cdn/bai-guang-e8a5bdc2-3df8-418c-a70a-0ff52e9f5e3-resize-750.jpeg"},
-
     
     {"title": "Silence is Golden", "url": "https://api.soundcloud.com/tracks/148119531/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Leslie Cheung", "ageYear": "1990", "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/LeslieCheung1988HotSummer.jpg/220px-LeslieCheung1988HotSummer.jpg"},
   ];

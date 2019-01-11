@@ -17,20 +17,7 @@ class PlaylistModuleState extends State<PlaylistModule> {
         itemBuilder: (BuildContext c, int index) {
           return new ListTile(
             title: new Text(config.playlist[index].title),
-            leading: new Container(
-              /*
-              *** ALBUM ART IMAGE ***
-              width: 50,
-              height: 50,
-              
-              child: Image.network(
-                config.playlist[index].imageURL,
-                fit: BoxFit.fill
-              ),
-              */
-
-              child: Icon(Icons.delete_sweep),
-            ),
+            leading: new Icon(Icons.playlist_add_check)
           );
         },
         padding: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
