@@ -1,0 +1,3 @@
+Update 1: China & Japan country selection and play/pause bug fix.
+Update 2: Actually working playlist system.
+Update 3: India country selection.
