@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:bloom/models/music.dart';
 import 'package:bloom/config.dart' as config;
 
@@ -11,26 +10,23 @@ class PlayerScreen extends StatefulWidget {
 }
 
 class PlayerScreenState extends State<PlayerScreen> {
-  AudioPlayer player = new AudioPlayer();
-  config.PlayerState playerState;
-  
   Future play() async {
-    await player.play(currentSelectedTrack.url);
-    player.positionHandler = (pos) => print("${pos.inMilliseconds}");
+    await config.player.play(currentSelectedTrack.url);
+    
     setState(() {
-      playerState = config.PlayerState.playing;
       config.playerState = config.PlayerState.playing;
     });
   }
 
   Future<int> pause() async {
-    final result = await player.pause();
+    final result = await config.player.pause();
+
     if (result == 1) {
       setState(() {
-        playerState = config.PlayerState.paused;
         config.playerState = config.PlayerState.paused;
       });
     }
+
     return result;
   }
 
@@ -110,10 +106,10 @@ class PlayerScreenState extends State<PlayerScreen> {
 
                   new Container(
                     child: new IconButton(
-                      icon: config.playerState ==  config.PlayerState.playing?new Icon(Icons.pause_circle_filled):new Icon(Icons.play_circle_filled),
+                      icon: config.playerState==config.PlayerState.playing?new Icon(Icons.pause_circle_filled):new Icon(Icons.play_circle_filled),
                       disabledColor: Colors.white,
                       color: Colors.white,
-                      onPressed: () => config.playerState == config.PlayerState.stopped || playerState == config.PlayerState.paused ? play() : pause(),
+                      onPressed: () => config.playerState==config.PlayerState.playing?pause():play(),
                       iconSize: 80,
                     ),
                   ),

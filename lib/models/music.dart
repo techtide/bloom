@@ -71,7 +71,25 @@ class Tracks {
 
   final List<Map<String, dynamic>> tracks_JAPAN = [];
 
-  final List<Map<String, dynamic>> tracks_CHINA = [];
+  final List<Map<String, dynamic>> tracks_CHINA = [
+    {"title": "The Moon Represents My Heart", "url": "https://api.soundcloud.com/tracks/146796808/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Teresa Teng", "ageYear":"1976", "image": "https://i1.sndcdn.com/artworks-000111252552-yxjb9s-t500x500.jpg"},
+
+    {"title": "The Wandering Songstress", "url": "https://api.soundcloud.com/tracks/95032461/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Zhou Xuan", "ageYear":"1937", "image": "https://direct.rhapsody.com/imageserver/images/Alb.80832664/500x500.jpg"},
+
+    {"title": "Shanghai Nights", "url": "https://api.soundcloud.com/tracks/547447575/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Wu Yingyin", "ageYear":"1957", "image": "https://lastfm-img2.akamaized.net/i/u/avatar300s/9f93fa7759dd47fd9ab3896eeee33196.jpg"},
+
+    {"title": "Give Me a Kiss", "url": "https://api.soundcloud.com/tracks/22860672/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": " Zhang Lu", "ageYear":"1954", "image": "https://lastfm-img2.akamaized.net/i/u/avatar300s/f516c971ad6648d4a5b88506c6dbf5c5.jpg"},
+
+    {"title": "Rose, Rose, I Love You", "url": "https://api.soundcloud.com/tracks/256559802/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Yao Li", "ageYear":"1940", "image": "https://lastfm-img2.akamaized.net/i/u/avatar300s/f516c971ad6648d4a5b88506c6dbf5c5.jpg"},
+
+    {"title": "The Spring Breeze Kisses My Face", "url": "https://api.soundcloud.com/tracks/256559751/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Yao Li", "ageYear":"1956", "image": "https://images.shazam.com/coverart/t223469103-i1057615682_s400.jpg"},
+
+    {"title": "I Want Your Love", "url": "https://api.soundcloud.com/tracks/289795498/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Ge Lan", "ageYear":"1952", "image": "https://images.shazam.com/coverart/t40655796-b730891116_s400.jpg"},
+
+    {"title": "The Pretender", "url": "https://api.soundcloud.com/tracks/253354836/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Bai Guang", "ageYear":"1948", "image": "https://alchetron.com/cdn/bai-guang-e8a5bdc2-3df8-418c-a70a-0ff52e9f5e3-resize-750.jpeg"},
+    
+    {"title": "Silence is Golden", "url": "https://api.soundcloud.com/tracks/148119531/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Leslie Cheung", "ageYear": "1988", "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/LeslieCheung1988HotSummer.jpg/220px-LeslieCheung1988HotSummer.jpg"},
+  ];
   
   List<Map<String, dynamic>> getTracks(String country) {
     if (country == "United Kingdom" || country == "United States") {
