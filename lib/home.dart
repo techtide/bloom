@@ -9,12 +9,12 @@ class BloomHome extends StatefulWidget {
 }
 
 class _BloomHomeState extends State<BloomHome> with SingleTickerProviderStateMixin {
-  TabController _tabController;
+  TabController tabController;
 
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(vsync: this, initialIndex: 1, length: 4);
+    tabController = new TabController(vsync: this, initialIndex: 1, length: 4);
   }
 
   @override
@@ -24,7 +24,7 @@ class _BloomHomeState extends State<BloomHome> with SingleTickerProviderStateMix
         title: new Text("Bloom"),
         elevation: 0.7,
         bottom: new TabBar(
-          controller:  _tabController,
+          controller:  tabController,
           indicatorColor: Colors.white,
           tabs: <Widget>[
             new Tab(text: "SUGGEST"),
@@ -34,7 +34,7 @@ class _BloomHomeState extends State<BloomHome> with SingleTickerProviderStateMix
         ),
       ),
       body: new TabBarView(
-        controller: _tabController,
+        controller: tabController,
         children: <Widget>[
           new SuggestScreen(),
           new PlayerScreen(),

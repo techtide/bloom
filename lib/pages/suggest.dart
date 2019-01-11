@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:bloom/models/music.dart';
 import 'package:bloom/config.dart' as config;
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:bloom/pages/player.dart';
+import 'package:bloom/home.dart';
 
 class SuggestScreen extends StatefulWidget {
   @override
@@ -62,9 +64,10 @@ class SuggestScreenState extends State<SuggestScreen> {
                     Fluttertoast.showToast(
                       msg: tracks.getFilteredTracks(filter, controller.text)[index]["title"] + " was added to your playlist."
                     );
+                  } else {
+                    currentSelectedTrack = Track(tracks.getFilteredTracks(filter, controller.text)[index]["url"].toString(), tracks.getFilteredTracks(filter, controller.text)[index]["ageYear"], tracks.getFilteredTracks(filter, controller.text)[index]["title"].toString(), tracks.getFilteredTracks(filter, controller.text)[index]["author"].toString(), tracks.getFilteredTracks(filter, controller.text)[index]["image"]);
+                    print(tracks.getFilteredTracks(filter, controller.text)[index]["image"]);
                   }
-                  currentSelectedTrack = Track(tracks.getFilteredTracks(filter, controller.text)[index]["url"].toString(), tracks.getFilteredTracks(filter, controller.text)[index]["ageYear"], tracks.getFilteredTracks(filter, controller.text)[index]["title"].toString(), tracks.getFilteredTracks(filter, controller.text)[index]["author"].toString(), tracks.getFilteredTracks(filter, controller.text)[index]["image"]);
-                  print(tracks.getFilteredTracks(filter, controller.text)[index]["image"]);
                 }
               );
             },
