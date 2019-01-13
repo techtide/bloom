@@ -67,7 +67,44 @@ class Tracks {
     {"title":  "Dancing Queen",  "url" :  "https://api.soundcloud.com/tracks/187768173/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P",  "author" :  "ABBA" ,  "ageYear":  1970, "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ef/ABBA_-_Dancing_Queen.png/220px-ABBA_-_Dancing_Queen.png"},
   ];
 
-  final List<Map<String, dynamic>> tracks_INDIA = [];
+  final List<Map<String, dynamic>> tracks_INDIA = [
+    {"title": "Koi Hum Dum Na Raha", "url": "https://api.soundcloud.com/tracks/178170153/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Abhijeet Bhattacharyai", "ageYear":"1940", "image": "https://i.ytimg.com/vi/gGmy88f5QSo/hqdefault.jpg"},
+
+    {"title": "Hum Aankh Macholi Kheleinge", "url": "https://api.soundcloud.com/tracks/295398377/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Khandan", "ageYear":"1940", "image": "https://i.ytimg.com/vi/-c9ihpOJp_Y/hqdefault.jpg"},
+
+    {"title": "Bas Bas Ve Dholna - Chowdhri", "url": "https://api.soundcloud.com/tracks/295397504/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Noor Jehan", "ageYear":"1940", "image": "https://i.ytimg.com/vi/aslLzW3J4DI/hqdefault.jpg"},
+
+    {"title": "Naya Nainon Mein Rang - Singhar", "url": "https://api.soundcloud.com/tracks/295399408/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Surayya", "ageYear":"1950", "image": "https://i.ytimg.com/vi/o3b_1SUgw30/hqdefault.jpg"},
+
+    {"title": "Guzar Gaya Woh Zamana", "url": "https://api.soundcloud.com/tracks/52940286/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Pankaj Kumar Mullick", "ageYear":"1940", "image": "https://i.ytimg.com/vi/ghSUsWwOpz0/hqdefault.jpg"},
+
+    {"title": "Hamari Sanson Mein", "url": "https://api.soundcloud.com/tracks/230907983/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Noor Jehan", "ageYear":"1940", "image": "https://c-sf.smule.com/sf/s53/arr/a6/56/342d6ed5-b8de-48f6-8cb7-d801c22aee2b.jpg"},
+
+    {"title": "Babuji Dheere Chalna", "url": "https://api.soundcloud.com/tracks/174597876/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Aar Paar", "ageYear":"1950", "image": "https://images.shazam.com/coverart/t10444537-b841114459_s400.jpg"},
+
+    {"title": "Hum Tumse Mohabbat Karke Sanam", "url": "https://api.soundcloud.com/tracks/485751771/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Awara", "ageYear":"1950", "image": "https://i.ytimg.com/vi/BiuuqMajjMg/hqdefault.jpg"},
+
+    {"title": "Yeh Raat Bheegi Bheegi", "url": "https://api.soundcloud.com/tracks/117340911/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Chori Chori", "ageYear":"1960", "image": "https://images-na.ssl-images-amazon.com/images/I/51v-SeD86oL._SS500.jpg"},
+
+    {"title": "Sun Sun Sun Sun Zaalima", "url": "https://api.soundcloud.com/tracks/297262296/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Mohammad Rafi", "ageYear":"1950", "image": "https://i.scdn.co/image/ca1fd67eacac8f366b42c5c5ba1244f41f89d30f"},
+
+    {"title": "Abhi Na Jao Chhodkar", "url": "https://api.soundcloud.com/tracks/173583539/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Aar Paar", "ageYear":"1960", "image": "https://c-sf.smule.com/sf/s83/arr/d5/af/6360972e-3761-43df-bcbe-c0ab8dbd8f2d.jpg"},
+
+    {"title": "Neele Gagan Ke Tale", "url": "https://api.soundcloud.com/tracks/114721806/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Mahendra Kapoor", "ageYear":"1970", "image": "https://images.shazam.com/coverart/t214526222-a3614590620004_s400.jpg"},
+
+    {"title": "Mere Desh Ki Dharti", "url": "https://api.soundcloud.com/tracks/228754668/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Mere Desh Ki Dharti", "ageYear":"1970", "image": "https://images-na.ssl-images-amazon.com/images/I/51LOJL%2BrLiL._SS500.jpg"},
+
+    {"title": "Thehriye Hosh Mein Aa Loon", "url": "https://api.soundcloud.com/tracks/245366144/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Suman Kalyanpur", "ageYear":"1970", "image": "https://images.shazam.com/coverart/t63544573-b1386072680_s400.jpg"},
+
+    {"title": "Singing Om", "url": "https://api.soundcloud.com/tracks/252741642/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "George Harrison", "ageYear":"1970", "image": "https://upload.wikimedia.org/wikipedia/en/5/56/Wonderwall_Music_%28George_Harrison_album_-_cover_art%29.jpg"},
+
+    {"title": "Main Shair To Nahin", "url": "https://api.soundcloud.com/tracks/298503382/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Shailender Singh", "ageYear":"1970", "image": "https://images.shazam.com/coverart/t45344908-b1366550849_s400.jpg"},
+
+    {"title": "Do Lafzon Ki Hai Dil Ki Kahani", "url": "https://api.soundcloud.com/tracks/91403262/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Asha Bhosle", "ageYear":"1980", "image": "https://images-na.ssl-images-amazon.com/images/I/611Lx27JK0L._SS500.jpg"},
+
+    {"title": "Mehbooba Mehbooba", "url": "https://api.soundcloud.com/tracks/167594280/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "R. D. Burman", "ageYear":"1980", "image": "https://e-cdns-images.dzcdn.net/images/cover/1c51dda0e06fcc69ee9f47724ed2a853/264x264-000000-80-0-0.jpg"},
+
+  ];
 
   final List<Map<String, dynamic>> tracks_JAPAN = [
     {"title": "Haro no Umi", "url": "https://api.soundcloud.com/tracks/183757971/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Michio Miyagi", "ageYear":"1930", "image": "https://i1.sndcdn.com/artworks-000072116289-4u2fy1-t500x500.jpg"},
