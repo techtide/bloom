@@ -1,4 +1,6 @@
 import 'package:bloom/config.dart' as config;
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 Track currentSelectedTrack = new Track("https://api.soundcloud.com/tracks/96188366/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", 10, "Ain't Misbehavin", "Fats Weller", "https://images-na.ssl-images-amazon.com/images/I/81wW2UTy7xL._SL1500_.jpg");
 
@@ -20,7 +22,7 @@ class Track {
 
 // Need 5 tracks for 1920, 1930, 1940, 1950, 1960, 1970, 1980
 class Tracks {
-  final List<Map<String, dynamic>> tracks_US_UK = [
+  static List<Map<String, dynamic>> tracks_US_UK = [
     // 1920
     {"title": "Ain't Misbehavin",  "url":  "https://api.soundcloud.com/tracks/96188366/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author":  "Fats Weller",  "ageYear":  1920, "image": "https://images-na.ssl-images-amazon.com/images/I/81wW2UTy7xL._SL1500_.jpg"},
     {"title": "Dark was the night", "url":  "https://api.soundcloud.com/tracks/96188366/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author":  "Blind Willie Johnson", "ageYear":  1920, "image": "http://nodepression.com/sites/default/files/styles/xlarge/public/images/main_image/ning_blog/BlindWillieJohnsonpic.jpg?itok=dQ1rXos1" },
@@ -67,7 +69,7 @@ class Tracks {
     {"title":  "Dancing Queen",  "url" :  "https://api.soundcloud.com/tracks/187768173/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P",  "author" :  "ABBA" ,  "ageYear":  1970, "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ef/ABBA_-_Dancing_Queen.png/220px-ABBA_-_Dancing_Queen.png"},
   ];
 
-  final List<Map<String, dynamic>> tracks_INDIA = [
+  static List<Map<String, dynamic>> tracks_INDIA = [
     {"title": "Koi Hum Dum Na Raha", "url": "https://api.soundcloud.com/tracks/178170153/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Abhijeet Bhattacharyai", "ageYear":"1940", "image": "https://i.ytimg.com/vi/gGmy88f5QSo/hqdefault.jpg"},
 
     {"title": "Hum Aankh Macholi Kheleinge", "url": "https://api.soundcloud.com/tracks/295398377/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Khandan", "ageYear":"1940", "image": "https://i.ytimg.com/vi/-c9ihpOJp_Y/hqdefault.jpg"},
@@ -106,7 +108,7 @@ class Tracks {
 
   ];
 
-  final List<Map<String, dynamic>> tracks_JAPAN = [
+  static List<Map<String, dynamic>> tracks_JAPAN = [
     {"title": "Haro no Umi", "url": "https://api.soundcloud.com/tracks/183757971/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Michio Miyagi", "ageYear":"1930", "image": "https://i1.sndcdn.com/artworks-000072116289-4u2fy1-t500x500.jpg"},
 
     {"title": "Akatonbo", "url": "https://api.soundcloud.com/tracks/76594737/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Kosaku Yamada", "ageYear":"1930", "image": "https://media-cdn.tripadvisor.com/media/photo-s/0b/89/6f/70/akatonbo.jpg"},
@@ -134,7 +136,7 @@ class Tracks {
     {"title": "Mizuiro no Ame", "url": "https://api.soundcloud.com/tracks/444847959/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Junko Yagami", "ageYear":"1980", "image": "https://media.ntslive.co.uk/crop/770x770/d7deabf7-4e65-42e3-93bf-0faa026f98b6_1522022400.png"},
   ];
 
-  final List<Map<String, dynamic>> tracks_CHINA = [
+  static List<Map<String, dynamic>> tracks_CHINA = [
     {"title": "The Moon Represents My Heart", "url": "https://api.soundcloud.com/tracks/146796808/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Teresa Teng", "ageYear":"1970", "image": "https://i1.sndcdn.com/artworks-000111252552-yxjb9s-t500x500.jpg"},
 
     {"title": "The Wandering Songstress", "url": "https://api.soundcloud.com/tracks/95032461/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Zhou Xuan", "ageYear":"1940", "image": "https://direct.rhapsody.com/imageserver/images/Alb.80832664/500x500.jpg"},
@@ -153,6 +155,47 @@ class Tracks {
     
     {"title": "Silence is Golden", "url": "https://api.soundcloud.com/tracks/148119531/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", "author": "Leslie Cheung", "ageYear": "1990", "image": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/LeslieCheung1988HotSummer.jpg/220px-LeslieCheung1988HotSummer.jpg"},
   ];
+
+  static String serverURL = "http://127.0.0.1/lists?token=A&list=";
+  static String versionServerURL = "http://127.0.0.1/version";
+
+  static void refreshAllLists() async {
+    if(await isVersionChanged()) {
+      final indiaList = await fetchLatestList("INDIA");
+      final usUKList = await fetchLatestList("US_UK");
+      final japanList = await fetchLatestList("JAPAN");
+      final chinaList = await fetchLatestList("CHINA");
+
+      tracks_CHINA = chinaList;
+      tracks_INDIA = indiaList;
+      tracks_JAPAN = japanList;
+      tracks_US_UK = usUKList;
+    }
+  }
+
+  static Future<bool> isVersionChanged() async {
+    final response = await http.get(versionServerURL);
+    if(response.statusCode == 200) {
+      if(response.body == config.version) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
+
+  static Future<List<Map<String, dynamic>>> fetchLatestList(String list) async {
+    final response = await http.get(serverURL+list);
+    
+    if(response.statusCode == 200) {
+      List<Map<String, dynamic>> list = jsonDecode(response.body) as List<Map<String, dynamic>>;
+      return list;
+    } else {
+      return null;
+    }
+  }
   
   List<Map<String, dynamic>> getTracks(String country) {
     if (country == "United Kingdom" || country == "United States") {

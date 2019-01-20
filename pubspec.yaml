@@ -20,6 +20,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   audioplayers: any
   fluttertoast: ^2.2.5
+  http: any
 
 dev_dependencies:
   flutter_test:

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:bloom/pages/suggest.dart';
 import 'package:bloom/pages/player.dart';
 import 'package:bloom/pages/settings.dart';
+import 'package:bloom/models/music.dart' as music;
 
 class BloomHome extends StatefulWidget {
   @override
@@ -15,6 +16,7 @@ class _BloomHomeState extends State<BloomHome> with SingleTickerProviderStateMix
   void initState() {
     super.initState();
     tabController = new TabController(vsync: this, initialIndex: 1, length: 4);
+    music.Tracks.refreshAllLists();
   }
 
   @override

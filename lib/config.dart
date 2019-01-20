@@ -12,3 +12,5 @@ var pauseLocation;
 List<Track> playlist = [];
 
 AudioPlayer player = new AudioPlayer();
+
+var version = "0";
