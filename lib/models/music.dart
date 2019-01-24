@@ -172,7 +172,7 @@ class Tracks {
       // tracks_JAPAN = japanList;
       // print(usUKList[0]["title"]);
       List<Map<String, dynamic>> newTrackList = new List<Map<String, dynamic>>();
-      usUKList.forEach((element) => newTrackList.add({"title": element["title"], "url": element["url"], "author": element["author"], "year": element["ageYear"], "image": (element["image"] != "none" || element["image"] != null ) ? element["image"] : "http://i.imgur.com/nszu54A.jpg"}));
+      usUKList.forEach((element) => newTrackList.add({"title": element["title"], "url": element["url"], "author": element["author"], "year": element["ageYear"], "image": (element["image"] != "None" || element["image"] != null ) ? element["image"] : "http://i.imgur.com/nszu54A.jpg"}));
       tracks_US_UK = newTrackList as List<Map<String, dynamic>>;
       print(newTrackList[0]["url"]);
     }
