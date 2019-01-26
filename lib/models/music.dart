@@ -1,5 +1,6 @@
 import 'package:bloom/config.dart' as config;
 import 'dart:convert';
+import 'dart:core';
 import 'package:http/http.dart' as http;
 
 Track currentSelectedTrack = new Track("https://api.soundcloud.com/tracks/96188366/stream?secret_token=s-tj3IS&client_id=LBCcHmRB8XSStWL6wKH2HPACspQlXg2P", 10, "Ain't Misbehavin", "Fats Weller", "https://images-na.ssl-images-amazon.com/images/I/81wW2UTy7xL._SL1500_.jpg");
@@ -172,9 +173,9 @@ class Tracks {
       // tracks_JAPAN = japanList;
       // print(usUKList[0]["title"]);
       List<Map<String, dynamic>> newTrackList = new List<Map<String, dynamic>>();
-      usUKList.forEach((element) => newTrackList.add({"title": element["title"], "url": element["url"], "author": element["author"], "year": element["ageYear"], "image": (element["image"] != "None" || element["image"] != null ) ? element["image"] : "http://i.imgur.com/nszu54A.jpg"}));
+      usUKList.forEach((element) => newTrackList.add({"title": element["title"], "url": element["url"], "author": element["author"], "year": int.parse(element["ageYear"] != "None" ? element["ageYear"] : "1840").round() - (int.parse(element["ageYear"] != "None" ? element["ageYear"] : "1840").round() % 10), "image": (element["image"] != "None" || element["image"] != null ) ? element["image"] : "http://i.imgur.com/nszu54A.jpg"}));
       tracks_US_UK = newTrackList as List<Map<String, dynamic>>;
-      print(newTrackList[0]["url"]);
+      // print(newTrackList[0]["url"]);
     }
   }
 
