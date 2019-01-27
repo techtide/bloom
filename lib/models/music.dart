@@ -163,19 +163,41 @@ class Tracks {
 
   static void refreshAllLists() async {
     if(await isVersionChanged()) {
-      // final indiaList = await fetchLatestList("INDIA");
       final usUKList = await fetchLatestList("US");
-      // final japanList = await fetchLatestList("JAPAN");
-      // final chinaList = await fetchLatestList("CHINA");
-
-      // tracks_CHINA = chinaList;
-      // tracks_INDIA = indiaList;
-      // tracks_JAPAN = japanList;
-      // print(usUKList[0]["title"]);
       List<Map<String, dynamic>> newTrackList = new List<Map<String, dynamic>>();
       usUKList.forEach((element) => newTrackList.add({"title": element["title"], "url": element["url"], "author": element["author"], "year": int.parse(element["ageYear"] != "None" ? element["ageYear"] : "1840").round() - (int.parse(element["ageYear"] != "None" ? element["ageYear"] : "1840").round() % 10), "image": (element["image"] != "None" || element["image"] != null ) ? element["image"] : "http://i.imgur.com/nszu54A.jpg"}));
-      tracks_US_UK = newTrackList as List<Map<String, dynamic>>;
-      // print(newTrackList[0]["url"]);
+      if(newTrackList.length < tracks_US_UK.length) {
+        print("Not updating the list database, as the length of the list is smaller.");
+      } else {
+        tracks_US_UK = newTrackList as List<Map<String, dynamic>>;
+      }
+
+      final indiaList = await fetchLatestList("INDIA");
+      List<Map<String, dynamic>> newTrackListIndia = new List<Map<String, dynamic>>();
+      indiaList.forEach((element) => newTrackListIndia.add({"title": element["title"], "url": element["url"], "author": element["author"], "year": int.parse(element["ageYear"] != "None" ? element["ageYear"] : "1840").round() - (int.parse(element["ageYear"] != "None" ? element["ageYear"] : "1840").round() % 10), "image": (element["image"] != "None" || element["image"] != null ) ? element["image"] : "http://i.imgur.com/nszu54A.jpg"}));
+      if(newTrackListIndia.length < tracks_INDIA.length) {
+        print("Not updating the list database, as the length of the list is smaller.");
+      } else {
+        tracks_INDIA = newTrackList as List<Map<String, dynamic>>;
+      }
+
+      final chinaList = await fetchLatestList("CHINA");
+      List<Map<String, dynamic>> newTrackListChina = new List<Map<String, dynamic>>();
+      indiaList.forEach((element) => newTrackListChina.add({"title": element["title"], "url": element["url"], "author": element["author"], "year": int.parse(element["ageYear"] != "None" ? element["ageYear"] : "1840").round() - (int.parse(element["ageYear"] != "None" ? element["ageYear"] : "1840").round() % 10), "image": (element["image"] != "None" || element["image"] != null ) ? element["image"] : "http://i.imgur.com/nszu54A.jpg"}));
+      if(newTrackListIndia.length < tracks_CHINA.length) {
+        print("Not updating the list database, as the length of the list is smaller.");
+      } else {
+        tracks_CHINA = newTrackListChina as List<Map<String, dynamic>>;
+      }
+      
+      final japanList = await fetchLatestList("JAPAN");
+      List<Map<String, dynamic>> newTrackListJapan = new List<Map<String, dynamic>>();
+      indiaList.forEach((element) => newTrackListJapan.add({"title": element["title"], "url": element["url"], "author": element["author"], "year": int.parse(element["ageYear"] != "None" ? element["ageYear"] : "1840").round() - (int.parse(element["ageYear"] != "None" ? element["ageYear"] : "1840").round() % 10), "image": (element["image"] != "None" || element["image"] != null ) ? element["image"] : "http://i.imgur.com/nszu54A.jpg"}));
+      if(newTrackListJapan.length < tracks_JAPAN.length) {
+        print("Not updating the list database, as the length of the list is smaller.");
+      } else {
+        tracks_JAPAN = newTrackListJapan as List<Map<String, dynamic>>;
+      }
     }
   }
 
