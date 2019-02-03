@@ -15,10 +15,12 @@ class PlayerScreenState extends State<PlayerScreen> {
     await config.player.play(currentSelectedTrack.url);
     
     setState(() {
+      while(config.player.positionHandler == config.player.durationHandler) {
+        config.playerState = config.PlayerState.stopped;  
+      }
       config.playerState = config.PlayerState.playing;
     });
   }
-
   Future<int> pause() async {
     final result = await config.player.pause();
 
